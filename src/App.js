@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Alert, Breadcrumb, Container } from 'react-bootstrap'
-import Header from '../src/components/Header'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <h1>IT WORKS!!!!!</h1>
         )}
       </main>
+      <Footer></Footer>
     </div>
   );
 }
