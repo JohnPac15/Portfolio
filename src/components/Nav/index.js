@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 
 function Nav(props){
   const{
@@ -6,30 +6,39 @@ function Nav(props){
     setContactSelected
   } = props
 
+
     return(
       <ul class="nav">
       <li class="nav-item">
         <a class="nav-link active" 
         aria-current="page" 
-        href="#"
+        href="/"
+        onClick={() => setContactSelected(false)}
         >Home
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" 
-        href="#about"
+        href="/"
         onClick={() => setContactSelected(false)}
         >About Me</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" 
-        href="#"
-        onClick={() => setContactSelected(true)}
-        >Projects</a>
+        onClick={() => {
+          setContactSelected(true)
+        }}
+        >Portfolio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link 
-        disabled"
+        <a class="nav-link"
+        href="https://www.cakeresume.com/s--P8whv9M29KklyZkAMjdHSg--/john-pacini"
+        target="_blank"
+        onClick={() => setContactSelected(true)}
+        >Resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
         onClick={() => setContactSelected(true)}
         >Contact Me</a>
       </li>
