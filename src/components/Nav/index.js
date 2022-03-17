@@ -19,12 +19,13 @@ function Nav(props){
       </li>
       <li class="nav-item">
         <a class="nav-link" 
-        href="/"
+        href="#about"
         onClick={() => setContactSelected(false)}
         >About Me</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" 
+      <li className="nav-item">
+        <a className="nav-link"
+        href="#projects" 
         onClick={() => {
           setContactSelected(true)
         }}
