@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Alert, Breadcrumb, Container } from 'react-bootstrap'
+import { Container,Row} from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import About from './components/About'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 function App() {
 
@@ -19,13 +22,21 @@ function App() {
         {!contactSelected ? (
           <Container className="p-3">
             <Container className="p-5 mb-4 bg-light rounded-3">
-              <h1 className="header p-5 mb-4 bg-light rounded-3">Welcome</h1>
+                <Row>
+                <h1 className="header p-5 mb-4 bg-light rounded-3">Welcome</h1>
+                </Row>
+              </Container>
+            <Container>
+              <About />
             </Container>
           </Container>
 
         ): (
-          <h1>IT WORKS!!!!!</h1>
+          <div>
+            <Projects></Projects>
+          </div>
         )}
+        <Contact></Contact>
       </main>
       <Footer></Footer>
     </div>

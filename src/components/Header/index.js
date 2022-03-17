@@ -9,7 +9,7 @@ function Header(props){
       } = props
 
     return(
-        <Container>
+        <Container className='sticky-top'>
             <header>
                 <Nav 
                 contactSelected={contactSelected}
