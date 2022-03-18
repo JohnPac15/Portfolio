@@ -1,47 +1,40 @@
 import React, { useState } from "react";
 
-function Nav(props){
-  const{
-    contactSelected,
-    setContactSelected
-  } = props
+function Nav({ currentPage, handlePageChange }){
 
 
     return(
-      <ul className="nav text-decoration-none ">
-      <li class="nav-item">
-        <a class="nav-link active" 
+      <ul className="nav text-decoration-none text-dark">
+      <li className="nav-item">
+        <a className="nav-link active" 
         aria-current="page" 
-        href="/"
-        // onClick={() => setContactSelected(false)}
+        href="#home"
         >Home
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" 
-        href="about"
-        // onClick={() => setContactSelected(false)}
+      <li className="nav-item">
+        <a className={currentPage === 'About' ? 'nav-link active' : 'nav-link'} 
+        href="#about"
+        onClick={() => handlePageChange('About')}
         >About Me</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link"
-        href="projects" 
-        // onClick={() => {
-        //   setContactSelected(true)
-        // }}
+        <a className={currentPage === 'projects' ? 'nav-link active' : 'nav-link'} 
+        href="#projects"
+        onClick={() => handlePageChange('Projects')}
         >Portfolio</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"
+      <li className="nav-item">
+        <a className="nav-link"
         href="https://www.cakeresume.com/s--P8whv9M29KklyZkAMjdHSg--/john-pacini"
         target="_blank"
-        // onClick={() => setContactSelected(true)}
+        onClick={() => handlePageChange('Home')}
         >Resume</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"
-        href="contact-me"
-        // onClick={() => setContactSelected(true)}
+      <li className="nav-item">
+        <a className={currentPage === 'contact' ? 'nav-link active' : 'nav-link'} 
+        href="#contact"
+        onClick={() => handlePageChange('Contact')}
         >Contact Me</a>
       </li>
     </ul>

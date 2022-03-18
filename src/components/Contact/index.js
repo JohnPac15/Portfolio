@@ -1,53 +1,54 @@
 import React, { useState } from 'react'
-import Header from '../Header'
 import { Container } from 'react-bootstrap'
-import { validateEmail } from '../../utils/helpers'
+import { checkPassword, validateEmail } from '../../utils/helpers';
 
 
 
 function Contact(){
     const [errorMessage, setErrorMessage] = useState('');
-    const [formState, setFormState] = useState({
-         name: '',
-         email: '',
-         message: '' 
-        });
-
-    const { name, email, message } = formState;
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
 
     function handleChange(e) {
-        if (e.target.name === 'email') {
-            const isValid = validateEmail(e.target.value);
-            if (!isValid) {
-              setErrorMessage('Your email is invalid.');
-            } else {
-              setErrorMessage('');
-            }
-          } else {
-            if (!e.target.value.length) {
-              setErrorMessage(`${e.target.name} is required.`);
-            } else {
-              setErrorMessage('');
-            }
-          }
-          console.log('errorMessage', errorMessage);
-    }
-    function handleSubmit(e) {
-      e.preventDefault();
-      if (!errorMessage) {
-        setFormState({ [e.target.name]: e.target.value });
-        console.log('Form', formState);
-      }
+      const { target } = e;
+      const inputType = target.name;
+      const inputValue = target.value;
 
+      if(inputType === 'name'){
+        setName(inputValue)
+      }
+       else if(inputType === 'email'){
+        setEmail(inputValue)
+      } else {
+        setMessage(inputValue)
+      }
     }
+    const handleSubmit = (e) => {
+      console.log('------')
+      e.preventDefault();
+  
+      if (!validateEmail(email) || !name) {
+        setErrorMessage('Email or username is invalid');
+        return;
+      }
+      if (!checkPassword(name)) {
+        setErrorMessage( "You need a name"
+        );
+        return;
+      }
+  
+      setName('');
+      setEmail('');
+      setMessage('')
+      alert(`Hello ${name}`);
+    };
 
 
     return(
-      <Container>
-        <Header />
         <Container id='contact-me'>
-            <form id="contact-form" onSubmit={handleSubmit}>
-                <div class="input-group mb-3">
+            <form id="contact-form">
+                <div className="input-group mb-3">
                     <input 
                     name="name" 
                     defaultValue={name}
@@ -60,12 +61,12 @@ function Contact(){
                     <span className="input-group-text" id="basic-addon1">Name</span>
                 </div>
 
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                     <input 
                     name="email" 
                     defaultValue={email} 
                     onBlur={handleChange} 
-                    type="text" 
+                    type="email" 
                     className="form-control" 
                     placeholder="You@email.com" 
                     aria-label="Recipient's username" 
@@ -73,7 +74,7 @@ function Contact(){
                     <span className="input-group-text" id="basic-addon2">@example.com</span>
                 </div>
 
-                <div class="input-group">
+                <div className="input-group">
                     <textarea 
                     name="message" 
                     defaultValue={message} 
@@ -84,16 +85,14 @@ function Contact(){
                     <span className="input-group-text">Let me know how I can help you</span>
                 </div>
                 {errorMessage && (
-                <div>
+                  <div>
                 <p className="error-text">{errorMessage}</p>
                 </div>
                 )}
-                <button type="submit">Submit</button>
+                <button type="submit" onSubmit={handleSubmit}>Submit</button>
             </form>
 
         </Container>
-
-      </Container>
     )
 }
 

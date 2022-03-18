@@ -2,18 +2,15 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Nav from '../Nav'
 
-function Header(props){
-    const{
-        contactSelected,
-        setContactSelected
-      } = props
+function Header({ currentPage, handlePageChange }){
 
     return(
         <Container className='sticky-top'>
             <header>
                 <Nav 
-                contactSelected={contactSelected}
-                setContactSelected={setContactSelected}
+                currentPage={currentPage} 
+                handlePageChange={handlePageChange}
+                
                 />
             </header>
 
