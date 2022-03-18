@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from '../Header'
 import { Container } from 'react-bootstrap'
 import { validateEmail } from '../../utils/helpers'
 
@@ -31,21 +32,20 @@ function Contact(){
           }
           console.log('errorMessage', errorMessage);
     }
-      
-    // console.log(formState);
-
-    function handleBlur(e) {
-        e.preventDefault()
-        // console.log(e.target.value, '=====')
-    }
-
     function handleSubmit(e) {
-        e.preventDefault();
-        console.log(formState);
+      e.preventDefault();
+      if (!errorMessage) {
+        setFormState({ [e.target.name]: e.target.value });
+        console.log('Form', formState);
+      }
+
     }
+
 
     return(
-        <Container>
+      <Container>
+        <Header />
+        <Container id='contact-me'>
             <form id="contact-form" onSubmit={handleSubmit}>
                 <div class="input-group mb-3">
                     <input 
@@ -92,6 +92,8 @@ function Contact(){
             </form>
 
         </Container>
+
+      </Container>
     )
 }
 

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container,Row} from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+// import Projects from './components/Projects'
+// import Contact from './components/Contact'
+import { Container,Row} from 'react-bootstrap'
 
 function App() {
 
@@ -19,7 +20,6 @@ function App() {
       setContactSelected={setContactSelected}
       />
       <main>
-        {!contactSelected ? (
           <Container className="p-3">
             <Container className="p-5 mb-4 bg-light rounded-3">
                 <Row>
@@ -30,14 +30,8 @@ function App() {
               <About />
             </Container>
           </Container>
-
-        ): (
-          <div>
-            <Projects></Projects>
-          </div>
-        )}
-        <Contact></Contact>
       </main>
+      <Outlet/>
       <Footer></Footer>
     </div>
   );

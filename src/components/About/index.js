@@ -4,9 +4,9 @@ import John from '../../assets/img/John.JPG'
 function About(){
     return(
         <div id='about'>
-            <h1 className="text-center">JOHN PACINI</h1>
             <div class="container">
                 <div class="row justify-content-md-center">
+            <h1 className="text-center">JOHN PACINI</h1>
                     <div class="col-sm-3">
                     <img src={John} className="img-fluid"/>
                     </div>
