@@ -4,13 +4,13 @@ import John from '../../assets/img/John.JPG'
 function About(){
     return(
         <div id='about'>
+            <div className="container">
+                <div className="row justify-content-md-center">
             <h1 className="text-center">JOHN PACINI</h1>
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-sm-3">
+                    <div className="col-sm-3">
                     <img src={John} className="img-fluid"/>
                     </div>
-                    <div class="col col-sm-6">
+                    <div className="col col-sm-6">
                     <p>
                         Hello, My name is John Pacini. I'm an entry-level full-stack web-developer. 
                         I enjoy learning new skills and pushing those skills to the test. 
