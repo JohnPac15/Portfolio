@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.04179b6f.css",
+    "main.js": "/portfolio/static/js/main.93e57729.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Beach.jpeg": "/portfolio/static/media/Beach.42391079617f9d55c125.jpeg",
+    "static/media/Snapshot.png": "/portfolio/static/media/Snapshot.24684f39ef6fe58fd933.png",
+    "static/media/tech-blog.png": "/portfolio/static/media/tech-blog.16a87db0786f913e85a7.png",
+    "static/media/Pizza.png": "/portfolio/static/media/Pizza.61fb951dcd15afba12c1.png",
+    "static/media/SA.png": "/portfolio/static/media/SA.fed7e280d6a3bb8c87fc.png",
+    "static/media/John.JPG": "/portfolio/static/media/John.8d50b7bf79687ee46034.JPG",
+    "static/media/Bank.png": "/portfolio/static/media/Bank.6e2da862f975d1f8536b.png",
+    "static/media/Note.png": "/portfolio/static/media/Note.bb35910ccb8e29ff9cf7.png",
+    "static/media/PIA.png": "/portfolio/static/media/PIA.7637974df6e9900e3b3d.png",
+    "index.html": "/portfolio/index.html",
+    "main.04179b6f.css.map": "/portfolio/static/css/main.04179b6f.css.map",
+    "main.93e57729.js.map": "/portfolio/static/js/main.93e57729.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04179b6f.css",
+    "static/js/main.93e57729.js"
+  ]
+}
