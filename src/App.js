@@ -7,7 +7,9 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-// import { Container,Row} from 'react-bootstrap'
+import Beach from './assets/img/Beach.jpeg'
+import SA from './assets/img/SA.png'
+import { Container,Row} from 'react-bootstrap'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -36,9 +38,28 @@ function App() {
   return (
     <div>
         <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-          <div>
-            {renderPage()}
-          </div>
+          <main>
+          <Container className="mb-3">
+              <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active" data-bs-interval="1000">
+                    <img src={SA} className="d-block w-100" alt="..."/>
+                  </div>
+                </div>
+               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </Container>
+            <div>
+              {renderPage()}
+            </div>
+          </main>
         <Footer />
     </div>
   );

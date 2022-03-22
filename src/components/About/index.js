@@ -3,7 +3,7 @@ import John from '../../assets/img/John.JPG'
 
 function About(){
     return(
-        <div id='about'>
+        <div id='about' className="m-3">
             <div className="container">
                 <div className="row justify-content-md-center">
             <h1 className="text-center">JOHN PACINI</h1>

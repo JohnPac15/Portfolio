@@ -14,20 +14,39 @@ function Contact(){
       const { target } = e;
       const inputType = target.name;
       const inputValue = target.value;
-
+      
+      
+      
       if(inputType === 'name'){
-        setName(inputValue)
-      }
-       else if(inputType === 'email'){
-        setEmail(inputValue)
+        if(inputValue === ''){
+          setErrorMessage("Please enter your name");
+          return
+        }
+        setErrorMessage('')
+        setName(inputValue)   
+      } else if(inputType === 'email'){
+        if(!validateEmail(inputValue)){
+          setErrorMessage("Please enter your Email");
+          return
+        } else {
+          setErrorMessage('')
+          setEmail(inputValue)
+        }
       } else {
-        setMessage(inputValue)
+        if(inputValue === ''){
+          setErrorMessage('Please provide a message');
+          return
+        } else{
+          setErrorMessage("")
+          setMessage(inputValue)
+        }
       }
     }
+
     const handleSubmit = (e) => {
       console.log('------')
       e.preventDefault();
-  
+      
       if (!validateEmail(email) || !name) {
         setErrorMessage('Email or username is invalid');
         return;
@@ -37,16 +56,22 @@ function Contact(){
         );
         return;
       }
-  
+      
       setName('');
       setEmail('');
       setMessage('')
       alert(`Hello ${name}`);
     };
-
-
+    
+    
     return(
-        <Container id='contact-me'>
+      <Container id='contact-me' className='p-5 justify-content-center'>
+          {errorMessage && (
+            <div className="alert alert-warning text-center" role="alert">
+              <p className="error-text fs-1">{errorMessage}</p>
+            </div>
+          )}
+          
             <form id="contact-form">
                 <div className="input-group mb-3">
                     <input 
@@ -84,12 +109,9 @@ function Contact(){
                     </textarea>
                     <span className="input-group-text">Let me know how I can help you</span>
                 </div>
-                {errorMessage && (
-                  <div>
-                <p className="error-text">{errorMessage}</p>
+                <div className="m-2 row align-items-center">
+                  <button type="submit" className="btn btn-secondary" onSubmit={handleSubmit}>Submit</button>
                 </div>
-                )}
-                <button type="submit" onSubmit={handleSubmit}>Submit</button>
             </form>
 
         </Container>
