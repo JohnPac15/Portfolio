@@ -1,6 +1,6 @@
  # Protfolio
  ## Description 
- This is a react front end app that uses food bootstrap as a framework for the styling. This app is a Simple showcase of what you can do with this S single page application with react.
+ This is a react front end app, that uses food bootstrap as a framework for the styling. This app is a simple showcase of what you can do with a SAP with react.
  ## Table of Contents
  * [Installation](#installation)
  * [Usage](#usage)
