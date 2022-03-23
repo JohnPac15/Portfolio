@@ -71,6 +71,8 @@ run "npm install" after you have cloned or forked the repo. Then run "npm start"
  Made by John Pacini
 
  Deployed website - https://johnpac15.github.io/Portfolio/
+ 
+ Repo - https://github.com/JohnPac15/Portfolio
 
  Github - https://github.com/Johnpac15
 
