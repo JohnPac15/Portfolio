@@ -5,6 +5,7 @@ import Pizza from '../../assets/img/Pizza.png'
 import Note from '../../assets/img/Note.png'
 import Bank from '../../assets/img/Bank.png'
 import Snap from '../../assets/img/Snapshot.png'
+import Babble from '../../assets/img/Babble.png'
 
 function Projects(){
     return(
@@ -80,7 +81,7 @@ function Projects(){
                         <div className="card-header">Babble-app
                         </div>
                         <div className="card" >
-                        <img src={Snap} class="card-img-top img-fluid p-1" alt="Snapshot"/>
+                        <img src={Babble} class="card-img-top img-fluid p-1" alt="Snapshot"/>
                         <div className="d-grid gap-2">
                             <a href="https://gentle-retreat-43606.herokuapp.com" target="_blank" className="btn btn-primary mb-1">Deployed Site</a>
                             <a href="https://gentle-retreat-43606.herokuapp.com" target="_blank" className="btn btn-primary">Github</a>
