@@ -8,7 +8,7 @@ function Nav({ currentPage, handlePageChange }){
         <li className="nav-item">
           <a className="nav-link active text-dark" 
           aria-current="page" 
-          href="/"
+          href="/Portfolio"
           >Home
           </a>
         </li>
